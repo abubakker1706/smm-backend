@@ -2,16 +2,17 @@
 const FacebookStrategy = require('passport-facebook').Strategy;
 const LinkdinStrategy=require('passport-linkedin-oauth2').Strategy;
 const TwitterStrategy=require('passport-twitter').Strategy
-
+const dotenv=require('dotenv')
+dotenv.config()
 
 const User = require('./model/User')
-const FACEBOOK_APP_ID="1195213917895942"
-const FACEBOOK_APP_SECRET="0380e3de9c2d2cfeeb8400ec6693a5e3"
+const FACEBOOK_APP_ID=process.env.FACEBOOK_APP_ID
+const FACEBOOK_APP_SECRET=process.env.FACEBOOK_APP_SECRET
 
-const LINKDIN_APP_ID= "77e6wyke1q9tif"
-const LINKDIN_APP_SECRET="DgmuM40Y0i3xzVLf"
-const TWITTER_APP_ID="DgmuM40Y0i3xzVLf"
-const TWITTER_APP_SECRET="p6vYi3jK5s2ipLrMqBYsII9OS8YH4i2QiZDr7TLKB1T71xwLvd"
+const LINKDIN_APP_ID= process.env.LINKDIN_APP_ID
+const LINKDIN_APP_SECRET=process.env.LINKDIN_APP_SECRET
+const TWITTER_APP_ID=process.env.TWITTER_APP_ID
+const TWITTER_APP_SECRET=process.env.TWITTER_APP_SECRET
 const passport = require("passport");
 passport.use(new FacebookStrategy({
                          clientID: FACEBOOK_APP_ID,
